@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div id="calendar">
+
+</div>
+{% include "partials/modal.html" %}
+{% endblock content %}
+{% block script %}
+<!-- Definir la variable en un script inline -->
+<script type="text/javascript">
+  var url_get = "{% url 'eventos_json' %}";
+  var edit_url="{% url 'edit_event' 0 %}";
+  var delete_url="{% url 'delete_event' 0 %}"
+</script>
+<script src="{% static 'js/calendar.js' %} ">
+</script>
+{% endblock script%}
